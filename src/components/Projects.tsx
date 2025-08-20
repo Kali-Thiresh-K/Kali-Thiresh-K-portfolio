@@ -21,36 +21,36 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Glassmorphism Dashboard",
-    description: "Modern analytics dashboard with beautiful glassmorphism design",
-    longDescription: "A comprehensive analytics dashboard built with React and TypeScript, featuring real-time data visualization, responsive design, and an intuitive glassmorphism interface that provides excellent user experience.",
+    title: "Craft Flow Control Center",
+    description: "A task management system for admins to add work and track tasks",
+    longDescription: "A comprehensive task management system for admins to add work, track pending/completed tasks, and monitor total quantity and amount in real time. Built with modern web technologies for efficiency and scalability.",
     image: project1,
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Chart.js", "Framer Motion"],
+    technologies: ["React", "JavaScript", "MySQL", "HTML", "CSS"],
     liveUrl: "#",
     githubUrl: "#",
     category: "Web App"
   },
   {
     id: 2,
-    title: "Mobile Shopping Experience",
-    description: "E-commerce mobile app with seamless user experience",
-    longDescription: "A modern mobile shopping application featuring smooth animations, intuitive navigation, and a beautiful interface. Built with React Native and designed with user experience as the top priority.",
+    title: "EV Charging Station Locator",
+    description: "Helps EV drivers find nearby charging points efficiently",
+    longDescription: "Helps EV drivers find nearby charging points by location, charger type, and amenities through a reliable database. Features interactive maps, real-time availability, and comprehensive filtering options for optimal user experience.",
     image: project2,
-    technologies: ["React Native", "Redux", "Firebase", "Stripe", "Expo"],
+    technologies: ["React", "MongoDB", "JavaScript", "Google Maps API", "HTML"],
     liveUrl: "#",
     githubUrl: "#",
-    category: "Mobile App"
+    category: "Web App"
   },
   {
     id: 3,
-    title: "E-commerce Platform",
-    description: "Full-stack e-commerce solution with admin panel",
-    longDescription: "Complete e-commerce platform with customer-facing store, admin dashboard, inventory management, payment processing, and analytics. Built with modern technologies for scalability and performance.",
+    title: "Portfolio Website",
+    description: "Personal portfolio showcasing projects and skills",
+    longDescription: "Personal portfolio website showcasing projects, skills, and achievements with modern glassmorphism design, smooth animations, and responsive layout. Built with React and modern web technologies.",
     image: project3,
-    technologies: ["Next.js", "Node.js", "MongoDB", "Stripe", "AWS"],
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     liveUrl: "#",
     githubUrl: "#",
-    category: "Full Stack"
+    category: "Portfolio"
   }
 ];
 

@@ -57,8 +57,8 @@ export const Navigation = () => {
             scrolled ? 'backdrop-blur-md' : ''
           }`}>
             {/* Logo */}
-            <div className="text-2xl font-bold gradient-text">
-              Alex
+            <div className="text-xl font-bold gradient-text">
+              KALI THIRESH K
             </div>
 
             {/* Desktop Navigation */}
