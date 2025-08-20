@@ -27,55 +27,53 @@ interface SkillCategory {
 
 const skillCategories: SkillCategory[] = [
   {
-    name: "Frontend Development",
+    name: "Programming Languages",
     icon: Code,
     color: "primary",
     skills: [
-      { name: "React/Next.js", level: 95, category: "frontend" },
-      { name: "TypeScript", level: 90, category: "frontend" },
-      { name: "Tailwind CSS", level: 85, category: "frontend" },
-      { name: "Framer Motion", level: 80, category: "frontend" }
+      { name: "Java", level: 85, category: "programming" },
+      { name: "Python", level: 80, category: "programming" },
+      { name: "C", level: 75, category: "programming" },
+      { name: "JavaScript", level: 85, category: "programming" }
     ]
   },
   {
-    name: "UI/UX Design",
+    name: "Frontend Development",
     icon: Palette,
     color: "accent",
     skills: [
-      { name: "Figma", level: 90, category: "design" },
-      { name: "Adobe Creative Suite", level: 85, category: "design" },
-      { name: "Prototyping", level: 88, category: "design" },
-      { name: "User Research", level: 75, category: "design" }
+      { name: "React", level: 80, category: "frontend" },
+      { name: "HTML", level: 90, category: "frontend" },
+      { name: "CSS", level: 85, category: "frontend" },
+      { name: "JavaScript", level: 85, category: "frontend" }
     ]
   },
   {
-    name: "Backend Development",
+    name: "Database Management",
     icon: Database,
     color: "primary",
     skills: [
-      { name: "Node.js", level: 85, category: "backend" },
-      { name: "Python", level: 80, category: "backend" },
-      { name: "PostgreSQL", level: 75, category: "backend" },
-      { name: "GraphQL", level: 70, category: "backend" }
+      { name: "MySQL", level: 80, category: "database" },
+      { name: "MongoDB", level: 75, category: "database" }
     ]
   },
   {
-    name: "Cloud & DevOps",
+    name: "Tools & Technologies",
     icon: Cloud,
     color: "accent",
     skills: [
-      { name: "AWS", level: 80, category: "cloud" },
-      { name: "Docker", level: 75, category: "cloud" },
-      { name: "CI/CD", level: 85, category: "cloud" },
-      { name: "Vercel", level: 90, category: "cloud" }
+      { name: "Git", level: 85, category: "tools" },
+      { name: "GitHub", level: 85, category: "tools" },
+      { name: "Blender", level: 70, category: "tools" },
+      { name: "Adobe Suite", level: 75, category: "tools" }
     ]
   }
 ];
 
 const tools = [
-  "React", "TypeScript", "Next.js", "Tailwind CSS", "Figma", "Node.js", 
-  "Python", "AWS", "Docker", "PostgreSQL", "MongoDB", "GraphQL", 
-  "Framer Motion", "Three.js", "Prisma", "Supabase"
+  "React", "JavaScript", "Python", "Java", "C", "HTML", "CSS", "MySQL", 
+  "MongoDB", "Git", "GitHub", "Blender", "Adobe Illustrator", "Adobe Photoshop", 
+  "Oracle APEX", "Vite", "Tailwind CSS", "TypeScript"
 ];
 
 export const Skills = () => {

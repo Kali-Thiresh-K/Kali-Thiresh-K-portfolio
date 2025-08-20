@@ -77,19 +77,19 @@ export const Contact = () => {
                 {
                   icon: Mail,
                   title: "Email",
-                  value: "hello@alexportfolio.com",
-                  link: "mailto:hello@alexportfolio.com"
+                  value: "kalithiresh811@gmil.com",
+                  link: "mailto:kalithiresh811@gmil.com"
                 },
                 {
                   icon: Phone,
                   title: "Phone",
-                  value: "+1 (555) 123-4567",
-                  link: "tel:+15551234567"
+                  value: "+91 9150715913",
+                  link: "tel:+919150715913"
                 },
                 {
                   icon: MapPin,
                   title: "Location",
-                  value: "San Francisco, CA",
+                  value: "Ramanathapuram, Tamil Nadu",
                   link: "#"
                 }
               ].map((contact, index) => (

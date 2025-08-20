@@ -25,33 +25,48 @@ export const Hero = () => {
 
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          {/* Avatar */}
-          <div className="relative w-48 h-48 mx-auto mb-8">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-glow rounded-full blur-lg opacity-30 animate-pulse-glow" />
-            <img
-              src={heroAvatar}
-              alt="Professional avatar"
-              className="relative w-full h-full rounded-full object-cover glass border-2 border-primary/20 float"
-            />
+          {/* Profile Images Gallery */}
+          <div className="relative flex justify-center items-center gap-6 mb-8 flex-wrap">
+            <div className="relative w-40 h-40 md:w-48 md:h-48">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-glow rounded-full blur-lg opacity-30 animate-pulse-glow" />
+              <img
+                src="/lovable-uploads/5b85931d-55a3-4d35-ab83-3fb4c049927b.png"
+                alt="Kali Thiresh K Profile"
+                className="relative w-full h-full rounded-full object-cover glass border-2 border-primary/20 float"
+              />
+            </div>
+            <div className="relative w-32 h-32 md:w-36 md:h-36">
+              <img
+                src="/lovable-uploads/5b85931d-55a3-4d35-ab83-3fb4c049927b.png"
+                alt="Kali Thiresh K"
+                className="w-full h-full rounded-full object-cover glass border-2 border-primary/10 float-delayed hover:scale-105 transition-transform"
+              />
+            </div>
+            <div className="relative w-32 h-32 md:w-36 md:h-36">
+              <img
+                src="/lovable-uploads/5b85931d-55a3-4d35-ab83-3fb4c049927b.png"
+                alt="Kali Thiresh K Portrait"
+                className="w-full h-full rounded-full object-cover glass border-2 border-primary/10 float hover:scale-105 transition-transform"
+              />
+            </div>
             <div className="absolute -top-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center animate-bounce">
               <span className="text-sm">👋</span>
             </div>
           </div>
 
           {/* Main text */}
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
             Hi, I'm{" "}
-            <span className="gradient-text">Alex</span>
+            <span className="gradient-text">KALI THIRESH K</span>
           </h1>
           
           <div className="space-y-4 mb-8">
             <h2 className="text-2xl md:text-3xl text-muted-foreground font-light">
-              Creative Developer & UI/UX Designer
+              Driven Computer Science Student
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              I craft beautiful digital experiences that blend innovative design 
-              with cutting-edge technology. Passionate about creating interfaces 
-              that inspire and delight users.
+              Passionate about learning and creating innovative solutions. 
+              Turning ideas into reality through code and continuous growth in technology.
             </p>
           </div>
 
