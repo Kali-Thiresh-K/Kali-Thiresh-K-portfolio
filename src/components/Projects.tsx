@@ -1,10 +1,5 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, ArrowRight } from "lucide-react";
-import project1 from "@/assets/project-1.jpg";
-import project2 from "@/assets/project-2.jpg";
-import project3 from "@/assets/project-3.jpg";
 
 interface Project {
   id: number;
@@ -24,7 +19,7 @@ const projects: Project[] = [
     title: "Craft Flow Control Center",
     description: "A task management system for admins to add work and track tasks",
     longDescription: "A comprehensive task management system for admins to add work, track pending/completed tasks, and monitor total quantity and amount in real time. Built with modern web technologies for efficiency and scalability.",
-    image: project1,
+    image: "/profile/profile6.jpg",
     technologies: ["React", "JavaScript", "MySQL", "HTML", "CSS"],
     liveUrl: "#",
     githubUrl: "#",
@@ -35,22 +30,22 @@ const projects: Project[] = [
     title: "EV Charging Station Locator",
     description: "Helps EV drivers find nearby charging points efficiently",
     longDescription: "Helps EV drivers find nearby charging points by location, charger type, and amenities through a reliable database. Features interactive maps, real-time availability, and comprehensive filtering options for optimal user experience.",
-    image: project2,
-    technologies: ["React", "MongoDB", "JavaScript", "Google Maps API", "HTML"],
+    image: "/profile/profile4.jpg",
+    technologies: ["React", "MongoDB", "LeafletMaps API", "Javascript", "HTML"],
     liveUrl: "#",
     githubUrl: "#",
     category: "Web App"
   },
   {
     id: 3,
-    title: "Portfolio Website",
-    description: "Personal portfolio showcasing projects and skills",
-    longDescription: "Personal portfolio website showcasing projects, skills, and achievements with modern glassmorphism design, smooth animations, and responsive layout. Built with React and modern web technologies.",
-    image: project3,
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    title: "Skill Connect",
+    description: "A platform connecting skilled workers with employers",
+    longDescription: "Skill Connect is a platform that connects professional and non-professional workers with business owners and recruiters. It enables workers to showcase their skills, find jobs, and allows employers to hire verified talent efficiently. Built with modern web technologies for reliability and ease of use.",
+    image: "/profile/profile5.jpg",
+    technologies: ["React", "Node.js", "PostgreSQL", "Vite"],
     liveUrl: "#",
     githubUrl: "#",
-    category: "Portfolio"
+    category: "Web App"
   }
 ];
 
@@ -93,20 +88,6 @@ export const Projects = () => {
                 >
                   {project.category}
                 </Badge>
-
-                {/* Hover overlay */}
-                <div className={`absolute inset-0 bg-primary/90 backdrop-blur-sm flex items-center justify-center gap-3 transition-opacity duration-300 ${
-                  hoveredProject === project.id ? 'opacity-100' : 'opacity-0'
-                }`}>
-                  <Button size="sm" variant="secondary" className="glass">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Live Demo
-                  </Button>
-                  <Button size="sm" variant="outline" className="glass border-white/20 text-white hover:bg-white/10">
-                    <Github className="w-4 h-4 mr-2" />
-                    Code
-                  </Button>
-                </div>
               </div>
 
               {/* Project info */}
@@ -119,7 +100,7 @@ export const Projects = () => {
                 </p>
 
                 {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2">
                   {project.technologies.slice(0, 3).map((tech, index) => (
                     <Badge 
                       key={index} 
@@ -138,15 +119,6 @@ export const Projects = () => {
                     </Badge>
                   )}
                 </div>
-
-                {/* Action button */}
-                <Button 
-                  variant="ghost" 
-                  className="w-full justify-between group-hover:bg-primary/10 group-hover:text-primary"
-                >
-                  View Project
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </Button>
               </div>
             </div>
           ))}
@@ -154,10 +126,7 @@ export const Projects = () => {
 
         {/* View all projects button */}
         <div className="text-center mt-12">
-          <Button size="lg" variant="outline" className="glass-card border-glass-border px-8 py-6">
-            View All Projects
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </Button>
+          {/* Keep this button if needed */}
         </div>
       </div>
     </section>

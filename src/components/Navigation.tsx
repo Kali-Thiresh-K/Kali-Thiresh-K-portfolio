@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X, Eye } from "lucide-react";  // 👈 Changed Download → Eye
 
 const navItems = [
   { name: "Home", href: "#hero" },
@@ -18,7 +18,7 @@ export const Navigation = () => {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
-      
+
       // Update active section based on scroll position
       const sections = navItems.map(item => item.href.replace('#', ''));
       const currentSection = sections.find(section => {
@@ -29,7 +29,7 @@ export const Navigation = () => {
         }
         return false;
       });
-      
+
       if (currentSection) {
         setActiveSection(currentSection);
       }
@@ -78,12 +78,14 @@ export const Navigation = () => {
               ))}
             </div>
 
-            {/* CTA Button */}
+            {/* Resume Button (Desktop) */}
             <div className="hidden md:block">
-              <Button variant="outline" size="sm" className="glass border-glass-border">
-                <Download className="w-4 h-4 mr-2" />
-                Resume
-              </Button>
+              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" size="sm" className="glass border-glass-border">
+                  <Eye className="w-4 h-4 mr-2" /> {/* 👈 Changed to Eye icon */}
+                  Resume
+                </Button>
+              </a>
             </div>
 
             {/* Mobile menu button */}
@@ -116,10 +118,13 @@ export const Navigation = () => {
               {item.name}
             </button>
           ))}
-          <Button variant="outline" size="lg" className="glass border-glass-border mt-8">
-            <Download className="w-4 h-4 mr-2" />
-            Download Resume
-          </Button>
+          {/* Resume button in mobile menu */}
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+            <Button variant="outline" size="lg" className="glass border-glass-border mt-8">
+              <Eye className="w-4 h-4 mr-2" /> {/* 👈 Changed to Eye icon */}
+              View Resume
+            </Button>
+          </a>
         </div>
       </div>
     </>
