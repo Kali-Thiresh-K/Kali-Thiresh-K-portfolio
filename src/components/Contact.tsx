@@ -3,14 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Send, 
-  MessageCircle,
-  CheckCircle
-} from "lucide-react";
+import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export const Contact = () => {
@@ -18,7 +11,7 @@ export const Contact = () => {
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -26,24 +19,23 @@ export const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     toast({
       title: "Message sent successfully!",
       description: "Thank you for reaching out. I'll get back to you soon.",
     });
-    
+
     setFormData({ name: "", email: "", subject: "", message: "" });
     setIsSubmitting(false);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   return (
@@ -54,8 +46,8 @@ export const Contact = () => {
             Let's <span className="gradient-text">Connect</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Have a project in mind or just want to chat about technology? 
-            I'd love to hear from you. Let's create something amazing together.
+            Have a project in mind or just want to chat about technology? I'd
+            love to hear from you. Let's create something amazing together.
           </p>
         </div>
 
@@ -65,8 +57,8 @@ export const Contact = () => {
             <div>
               <h3 className="text-2xl font-semibold mb-6">Get In Touch</h3>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                I'm always excited to work on new projects and collaborate with 
-                creative minds. Whether you have a specific project in mind or 
+                I'm always excited to work on new projects and collaborate with
+                creative minds. Whether you have a specific project in mind or
                 just want to explore possibilities, don't hesitate to reach out.
               </p>
             </div>
@@ -78,20 +70,20 @@ export const Contact = () => {
                   icon: Mail,
                   title: "Email",
                   value: "kalithiresh811@gmil.com",
-                  link: "mailto:kalithiresh811@gmil.com"
+                  link: "mailto:kalithiresh811@gmil.com",
                 },
                 {
                   icon: Phone,
                   title: "Phone",
                   value: "+91 9150715913",
-                  link: "tel:+919150715913"
+                  link: "tel:+919150715913",
                 },
                 {
                   icon: MapPin,
                   title: "Location",
                   value: "Ramanathapuram, Tamil Nadu",
-                  link: "#"
-                }
+                  link: "#",
+                },
               ].map((contact, index) => (
                 <a
                   key={index}
@@ -102,7 +94,9 @@ export const Contact = () => {
                     <contact.icon className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">{contact.title}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {contact.title}
+                    </p>
                     <p className="font-medium group-hover:text-primary transition-colors">
                       {contact.value}
                     </p>
@@ -145,6 +139,7 @@ export const Contact = () => {
                     className="glass border-glass-border bg-glass/30 focus:bg-glass/50"
                   />
                 </div>
+
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
                   <Input
@@ -187,9 +182,9 @@ export const Contact = () => {
                 />
               </div>
 
-              <Button 
-                type="submit" 
-                size="lg" 
+              <Button
+                type="submit"
+                size="lg"
                 className="w-full bg-primary hover:bg-primary/90 text-primary-foreground interactive"
                 disabled={isSubmitting}
               >
@@ -214,7 +209,11 @@ export const Contact = () => {
           <Button
             size="lg"
             className="rounded-full w-14 h-14 bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 animate-bounce"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() =>
+              document
+                .getElementById("contact")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
           >
             <MessageCircle className="w-6 h-6" />
           </Button>
@@ -222,4 +221,4 @@ export const Contact = () => {
       </div>
     </section>
   );
-};
+}
