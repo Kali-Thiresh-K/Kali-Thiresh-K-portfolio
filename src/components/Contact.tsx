@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send, MessageCircle, Github, Linkedin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export const Contact = () => {
@@ -103,6 +103,31 @@ export const Contact = () => {
                   </div>
                 </a>
               ))}
+            </div>
+
+            {/* 🔥 LinkedIn & GitHub Get in Touch cards */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-6">
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/in/kalithiresh811/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-card flex items-center justify-center gap-3 px-6 py-4 w-full sm:w-1/2 interactive hover:text-primary"
+              >
+                <Linkedin className="w-6 h-6 text-primary" />
+                <span className="font-medium">LinkedIn</span>
+              </a>
+
+              {/* GitHub */}
+              <a
+                href="https://github.com/Kali-Thiresh-K"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-card flex items-center justify-center gap-3 px-6 py-4 w-full sm:w-1/2 interactive hover:text-primary"
+              >
+                <Github className="w-6 h-6 text-primary" />
+                <span className="font-medium">GitHub</span>
+              </a>
             </div>
 
             {/* Quick stats */}
@@ -221,4 +246,4 @@ export const Contact = () => {
       </div>
     </section>
   );
-}
+};
