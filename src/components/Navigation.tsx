@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Eye } from "lucide-react";  // 👈 Changed Download → Eye
+import { Menu, X, Eye } from "lucide-react";  // 👈 Eye icon for Resume
 
 const navItems = [
   { name: "Home", href: "#hero" },
@@ -61,16 +61,16 @@ export const Navigation = () => {
               KALI THIRESH K
             </div>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Navigation - now visible in white/purple */}
             <div className="hidden md:flex items-center space-x-8">
               {navItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
+                  className={`text-sm font-medium transition-colors hover:text-purple-400 ${
                     activeSection === item.href.replace('#', '') 
-                      ? 'text-primary' 
-                      : 'text-muted-foreground'
+                      ? 'text-purple-500'   // active section = purple
+                      : 'text-white'        // default = white
                   }`}
                 >
                   {item.name}
@@ -82,7 +82,7 @@ export const Navigation = () => {
             <div className="hidden md:block">
               <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" size="sm" className="glass border-glass-border">
-                  <Eye className="w-4 h-4 mr-2" /> {/* 👈 Changed to Eye icon */}
+                  <Eye className="w-4 h-4 mr-2" />
                   Resume
                 </Button>
               </a>
@@ -109,10 +109,10 @@ export const Navigation = () => {
             <button
               key={item.name}
               onClick={() => scrollToSection(item.href)}
-              className={`text-2xl font-medium transition-colors hover:text-primary ${
+              className={`text-2xl font-medium transition-colors hover:text-purple-400 ${
                 activeSection === item.href.replace('#', '') 
-                  ? 'text-primary' 
-                  : 'text-foreground'
+                  ? 'text-purple-500' 
+                  : 'text-white'
               }`}
             >
               {item.name}
@@ -121,7 +121,7 @@ export const Navigation = () => {
           {/* Resume button in mobile menu */}
           <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
             <Button variant="outline" size="lg" className="glass border-glass-border mt-8">
-              <Eye className="w-4 h-4 mr-2" /> {/* 👈 Changed to Eye icon */}
+              <Eye className="w-4 h-4 mr-2" />
               View Resume
             </Button>
           </a>

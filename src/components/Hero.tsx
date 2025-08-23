@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Download, Github, Linkedin, Mail, Menu } from "lucide-react";
 
 export const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -82,23 +82,8 @@ export const Hero = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            {/* Get In Touch → LinkedIn */}
-            <a
-              href="https://www.linkedin.com/in/kalithiresh811/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button
-                size="lg"
-                className="glass-card bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg interactive"
-              >
-                <Linkedin className="w-5 h-5 mr-2" />
-                Get In Touch
-              </Button>
-            </a>
-
-            {/* Download Resume */}
+          <div className="flex justify-center mb-12">
+            {/* Only Download Resume in center */}
             <a href="/resume.pdf" download>
               <Button
                 variant="outline"
@@ -144,6 +129,13 @@ export const Hero = () => {
             <ArrowDown className="w-5 h-5" />
           </button>
         </div>
+      </div>
+
+      {/* Example Mobile Navbar Box */}
+      <div className="absolute top-6 right-6 md:hidden">
+        <button className="glass-card bg-primary/90 text-white p-3 rounded-lg shadow-lg">
+          <Menu className="w-6 h-6" />
+        </button>
       </div>
     </section>
   );

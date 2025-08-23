@@ -84,7 +84,7 @@ export const About = () => {
             <div className="relative">
               <Avatar className="w-32 h-32 ring-4 ring-primary/20 ring-offset-4 ring-offset-background">
                 <AvatarImage
-                  src="/profile/profile1.jpg"  // ✅ Updated image path
+                  src="/profile/profile1.jpg" // ✅ Updated image path
                   alt="Kali Thiresh K"
                   className="object-cover"
                 />
@@ -102,13 +102,13 @@ export const About = () => {
 
           <div className="max-w-4xl mx-auto glass-card p-8 mb-12">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Hi! I'm <span className="text-primary font-semibold">Kali Thiresh K</span>, a passionate Computer Science student at Kongu Engineering College with an unwavering enthusiasm for technology and innovation. My journey in programming began with the fundamentals of C, Java, and Python, but it quickly evolved into a love affair with full-stack web development.
+              Hi! I'm <span className="text-primary font-semibold">Kali Thiresh K</span>, a Computer Science student at Kongu Engineering College with a strong passion for technology and innovation. I started with C, Java, and Python, and quickly grew into full-stack web development.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mt-4">
-              I thrive on solving complex problems and turning ideas into reality through code. My expertise spans across HTML, CSS, JavaScript, and React for frontend development, paired with MySQL and MongoDB for robust backend solutions. I've channeled this passion into exciting projects like the <span className="text-primary font-medium">Craft Flow Control Center</span> - a comprehensive task management system, and the <span className="text-primary font-medium">EV Charging Station Locator</span> - helping drivers find charging points seamlessly.
+              Skilled in HTML, CSS, JavaScript, React, MySQL, and MongoDB, I love turning ideas into impactful projects. Some of my works include the <span className="text-primary font-medium">Craft Flow Control Center</span> and the <span className="text-primary font-medium">EV Charging Station Locator</span>.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mt-4">
-              Beyond coding, I'm certified in Oracle APEX Cloud Development, 3D Animation with Blender, and Adobe Creative Suite. I believe in continuous learning and am always eager to explore emerging technologies. Whether it's collaborating on innovative projects or diving deep into new frameworks, I'm ready to make a meaningful impact in the tech world.
+              Alongside coding, I’ve earned certifications in Oracle APEX, Blender, and Adobe Creative Suite. I believe in continuous learning and enjoy exploring new technologies to create real-world solutions.
             </p>
           </div>
 
