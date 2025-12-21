@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Send, MessageCircle, Github, Linkedin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -20,16 +21,44 @@ export const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      // EmailJS configuration - replace with your actual service details
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: 'kalithiresh811@gmail.com',
+        reply_to: formData.email, // This allows you to reply directly to the sender
+        to_name: 'Kali Thiresh K' // Your name for personalization
+      };
 
-    toast({
-      title: "Message sent successfully!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
+      // Send email using EmailJS
+      // You need to set up EmailJS account and get these IDs:
+      // SERVICE_ID, TEMPLATE_ID, and PUBLIC_KEY from EmailJS dashboard
+      await emailjs.send(
+        'service_9z5taeu', // Replace with your EmailJS service ID
+        'template_759aros', // Replace with your EmailJS template ID
+        templateParams,
+        'u-aeIxDl1xxE0F5o8' // Replace with your EmailJS public key
+      );
 
-    setFormData({ name: "", email: "", subject: "", message: "" });
-    setIsSubmitting(false);
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      toast({
+        title: "Failed to send message",
+        description: "Something went wrong. Please try again or contact me directly.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -69,8 +98,8 @@ export const Contact = () => {
                 {
                   icon: Mail,
                   title: "Email",
-                  value: "kalithiresh811@gmil.com",
-                  link: "mailto:kalithiresh811@gmil.com",
+                  value: "kalithiresh811@gmail.com",
+                  link: "mailto:kalithiresh811@gmail.com",
                 },
                 {
                   icon: Phone,
