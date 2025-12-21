@@ -28,45 +28,28 @@ export const Hero = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          {/* Profile Images Gallery */}
-          <div className="relative flex justify-center items-center gap-6 mb-8 flex-wrap">
-            {/* First Image */}
-            <div className="relative w-40 h-40 md:w-48 md:h-48 mt-6">
+          {/* Single Centered Profile Image */}
+          <div className="relative flex justify-center mb-8">
+            <div className="relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64">
+              {/* Enhanced gradient glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-glow rounded-full blur-xl opacity-30 animate-pulse-glow" />
+              
+              {/* Main profile image */}
               <img
                 src="/profile/profile7.jpg"
                 alt="Kali Thiresh K Profile"
-                className="relative w-full h-full rounded-full object-cover glass border-2 border-primary/20"
+                className="relative w-full h-full rounded-full object-cover glass border-4 border-primary/20 hover:scale-105 transition-all duration-300 shadow-2xl"
               />
-            </div>
 
-            {/* Second Image */}
-            <div className="relative w-32 h-32 md:w-36 md:h-36 mt-6">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-glow rounded-full blur-lg opacity-30 animate-pulse-glow" />
-              <img
-                src="/profile/profile3.jpg"
-                alt="Kali Thiresh K"
-                className="w-full h-full rounded-full object-cover glass border-2 border-primary/10 float-delayed hover:scale-105 transition-transform"
-              />
-            </div>
-
-            {/* Third Image */}
-            <div className="relative w-32 h-32 md:w-36 md:h-36 mt-6">
-              <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary-glow rounded-full blur-lg opacity-30 animate-pulse-glow" />
-              <img
-                src="/profile/profile2.jpg"
-                alt="Kali Thiresh K Portrait"
-                className="w-full h-full rounded-full object-cover glass border-2 border-primary/10 float hover:scale-105 transition-transform"
-              />
-            </div>
-
-            {/* Waving Hand */}
-            <div className="absolute top-2 right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center animate-bounce">
-              <span className="text-sm">👋</span>
+              {/* Waving Hand positioned on the profile */}
+              <div className="absolute -top-2 -right-2 w-12 h-12 bg-accent rounded-full flex items-center justify-center animate-bounce shadow-lg">
+                <span className="text-lg">👋</span>
+              </div>
             </div>
           </div>
 
           {/* Main text */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight">
             Hi, I'm <span className="gradient-text">KALI THIRESH K</span>
           </h1>
 
