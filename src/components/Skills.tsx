@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
 import { 
   Code, 
   Palette, 
@@ -14,7 +13,6 @@ import {
 
 interface Skill {
   name: string;
-  level: number;
   category: string;
 }
 
@@ -31,10 +29,10 @@ const skillCategories: SkillCategory[] = [
     icon: Code,
     color: "primary",
     skills: [
-      { name: "Java", level: 85, category: "programming" },
-      { name: "Python", level: 80, category: "programming" },
-      { name: "C", level: 75, category: "programming" },
-      { name: "JavaScript", level: 85, category: "programming" }
+      { name: "Java", category: "programming" },
+      { name: "Python", category: "programming" },
+      { name: "C", category: "programming" },
+      { name: "JavaScript", category: "programming" }
     ]
   },
   {
@@ -42,10 +40,10 @@ const skillCategories: SkillCategory[] = [
     icon: Palette,
     color: "accent",
     skills: [
-      { name: "React", level: 80, category: "frontend" },
-      { name: "HTML", level: 90, category: "frontend" },
-      { name: "CSS", level: 85, category: "frontend" },
-      { name: "JavaScript", level: 85, category: "frontend" }
+      { name: "React", category: "frontend" },
+      { name: "HTML", category: "frontend" },
+      { name: "CSS", category: "frontend" },
+      { name: "JavaScript", category: "frontend" }
     ]
   },
   {
@@ -53,8 +51,8 @@ const skillCategories: SkillCategory[] = [
     icon: Database,
     color: "primary",
     skills: [
-      { name: "MySQL", level: 80, category: "database" },
-      { name: "MongoDB", level: 75, category: "database" }
+      { name: "MySQL", category: "database" },
+      { name: "MongoDB", category: "database" }
     ]
   },
   {
@@ -62,10 +60,10 @@ const skillCategories: SkillCategory[] = [
     icon: Cloud,
     color: "accent",
     skills: [
-      { name: "Git", level: 85, category: "tools" },
-      { name: "GitHub", level: 85, category: "tools" },
-      { name: "Blender", level: 70, category: "tools" },
-      { name: "Adobe Suite", level: 75, category: "tools" }
+      { name: "Git", category: "tools" },
+      { name: "GitHub", category: "tools" },
+      { name: "Blender", category: "tools" },
+      { name: "Adobe Suite", category: "tools" }
     ]
   }
 ];
@@ -78,14 +76,6 @@ const tools = [
 
 export const Skills = () => {
   const [activeCategory, setActiveCategory] = useState(0);
-  const [animatedSkills, setAnimatedSkills] = useState<boolean[]>([]);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setAnimatedSkills(new Array(skillCategories[activeCategory].skills.length).fill(true));
-    }, 300);
-    return () => clearTimeout(timer);
-  }, [activeCategory]);
 
   return (
     <section id="skills" className="py-20 relative">
@@ -107,10 +97,7 @@ export const Skills = () => {
             return (
               <button
                 key={index}
-                onClick={() => {
-                  setActiveCategory(index);
-                  setAnimatedSkills([]);
-                }}
+                onClick={() => setActiveCategory(index)}
                 className={`glass-card p-4 flex items-center gap-3 interactive transition-all duration-300 ${
                   activeCategory === index 
                     ? 'bg-primary/20 border-primary/30 text-primary' 
@@ -135,16 +122,10 @@ export const Skills = () => {
               <h3 className="text-2xl font-semibold">{skillCategories[activeCategory].name}</h3>
             </div>
 
-            <div className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {skillCategories[activeCategory].skills.map((skill, index) => (
-                <div key={index} className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="font-medium">{skill.name}</span>
-                  </div>
-                  <Progress 
-                    value={animatedSkills[index] ? 100 : 0} 
-                    className="h-2 bg-muted/30"
-                  />
+                <div key={index} className="glass-card p-4 text-center">
+                  <span className="font-medium text-lg">{skill.name}</span>
                 </div>
               ))}
             </div>
