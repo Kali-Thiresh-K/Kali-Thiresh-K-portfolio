@@ -32,7 +32,7 @@ const projects: Project[] = [
     longDescription: "Helps EV drivers find nearby charging points by location, charger type, and amenities through a reliable database. Features interactive maps, real-time availability, and comprehensive filtering options for optimal user experience.",
     image: "/profile/profile4.jpg",
     technologies: ["React", "MongoDB", "LeafletMaps API", "Javascript", "HTML"],
-    liveUrl: "#",
+    liveUrl: "https://evlocator-frontend.onrender.com",
     githubUrl: "#",
     category: "Web App"
   },
@@ -60,7 +60,7 @@ export const Projects = () => {
             Featured <span className="gradient-text">Projects</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A showcase of my recent work, featuring innovative solutions 
+            A showcase of my recent work, featuring innovative solutions
             and creative approaches to modern web development challenges.
           </p>
         </div>
@@ -81,9 +81,9 @@ export const Projects = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
-                
+
                 {/* Category badge */}
-                <Badge 
+                <Badge
                   className="absolute top-4 left-4 bg-primary/90 text-primary-foreground"
                 >
                   {project.category}
@@ -102,17 +102,17 @@ export const Projects = () => {
                 {/* Technologies */}
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.slice(0, 3).map((tech, index) => (
-                    <Badge 
-                      key={index} 
-                      variant="outline" 
+                    <Badge
+                      key={index}
+                      variant="outline"
                       className="border-glass-border bg-glass/30 text-xs"
                     >
                       {tech}
                     </Badge>
                   ))}
                   {project.technologies.length > 3 && (
-                    <Badge 
-                      variant="outline" 
+                    <Badge
+                      variant="outline"
                       className="border-glass-border bg-glass/30 text-xs"
                     >
                       +{project.technologies.length - 3}
