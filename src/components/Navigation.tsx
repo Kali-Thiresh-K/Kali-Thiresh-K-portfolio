@@ -49,13 +49,11 @@ export const Navigation = () => {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'py-4' : 'py-6'
-      }`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'py-4' : 'py-6'
+        }`}>
         <div className="container mx-auto px-6">
-          <div className={`glass-card flex items-center justify-between p-4 transition-all duration-300 ${
-            scrolled ? 'backdrop-blur-md' : ''
-          }`}>
+          <div className={`glass-card flex items-center justify-between p-4 transition-all duration-300 ${scrolled ? 'backdrop-blur-md' : ''
+            }`}>
             {/* Logo */}
             <div className="text-xl font-bold gradient-text">
               KALI THIRESH K
@@ -67,11 +65,10 @@ export const Navigation = () => {
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className={`text-sm font-medium transition-colors hover:text-purple-400 ${
-                    activeSection === item.href.replace('#', '') 
-                      ? 'text-purple-500'   // active section = purple
-                      : 'text-white'        // default = white
-                  }`}
+                  className={`text-sm font-medium transition-colors hover:text-purple-400 ${activeSection === item.href.replace('#', '')
+                    ? 'text-purple-500'   // active section = purple
+                    : 'text-white'        // default = white
+                    }`}
                 >
                   {item.name}
                 </button>
@@ -91,7 +88,8 @@ export const Navigation = () => {
             {/* Mobile menu button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden glass-card w-10 h-10 flex items-center justify-center"
+              className="md:hidden glass-card w-10 h-10 flex items-center justify-center relative z-50"
+              aria-label="Toggle menu"
             >
               {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -99,29 +97,35 @@ export const Navigation = () => {
         </div>
       </nav>
 
-      {/* Mobile Navigation */}
-      <div className={`fixed inset-0 z-40 md:hidden transition-all duration-300 ${
-        isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-      }`}>
-        <div className="absolute inset-0 bg-background/80 backdrop-blur-lg" />
-        <div className="relative flex flex-col items-center justify-center h-full space-y-8">
+      {/* Mobile NavigationOverlay */}
+      <div
+        className={`fixed inset-0 z-40 md:hidden transition-all duration-300 ${isOpen ? 'opacity-100 visible pointer-events-auto' : 'opacity-0 invisible pointer-events-none'
+          }`}
+      >
+        {/* Backdrop */}
+        <div
+          className="absolute inset-0 bg-background/95 backdrop-blur-lg"
+          onClick={() => setIsOpen(false)}
+        />
+
+        {/* Menu Items */}
+        <div className="relative flex flex-col items-center justify-center h-full space-y-8 z-50">
           {navItems.map((item) => (
             <button
               key={item.name}
               onClick={() => scrollToSection(item.href)}
-              className={`text-2xl font-medium transition-colors hover:text-purple-400 ${
-                activeSection === item.href.replace('#', '') 
-                  ? 'text-purple-500' 
-                  : 'text-white'
-              }`}
+              className={`text-2xl font-bold transition-colors hover:text-purple-400 ${activeSection === item.href.replace('#', '')
+                  ? 'text-purple-500'
+                  : 'text-foreground'
+                }`}
             >
               {item.name}
             </button>
           ))}
           {/* Resume button in mobile menu */}
           <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" size="lg" className="glass border-glass-border mt-8">
-              <Eye className="w-4 h-4 mr-2" />
+            <Button variant="outline" size="lg" className="glass border-glass-border mt-8 w-48">
+              <Eye className="w-5 h-5 mr-2" />
               View Resume
             </Button>
           </a>

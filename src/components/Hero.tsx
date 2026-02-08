@@ -24,19 +24,18 @@ export const Hero = () => {
 
       <div className="container mx-auto px-6 text-center relative z-10">
         <div
-          className={`transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+          className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
         >
           {/* Single Centered Profile Image */}
           <div className="relative flex justify-center mb-8">
             <div className="relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64">
               {/* Enhanced gradient glow effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-glow rounded-full blur-xl opacity-30 animate-pulse-glow" />
-              
+
               {/* Main profile image */}
               <img
-                src="/profile/profile7.jpg"
+                src="/profile/profile12.jpg"
                 alt="Kali Thiresh K Profile"
                 className="relative w-full h-full rounded-full object-cover glass border-4 border-primary/20 hover:scale-105 transition-all duration-300 shadow-2xl"
               />
@@ -114,12 +113,6 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Example Mobile Navbar Box */}
-      <div className="absolute top-6 right-6 md:hidden">
-        <button className="glass-card bg-primary/90 text-white p-3 rounded-lg shadow-lg">
-          <Menu className="w-6 h-6" />
-        </button>
-      </div>
     </section>
   );
 };
