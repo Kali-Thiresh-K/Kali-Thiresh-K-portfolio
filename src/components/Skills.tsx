@@ -45,8 +45,8 @@ const skillCategories: SkillCategory[] = [
     description: "Crafting beautiful user interfaces",
     skills: [
       { name: "React" },
-      { name: "HTML5" },
-      { name: "CSS3" },
+      { name: "HTML" },
+      { name: "CSS" },
       { name: "Tailwind CSS" },
       { name: "Vite" }
     ]
