@@ -16,12 +16,12 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Craft Flow Control Center",
-    description: "A task management system for admins to add work and track tasks",
-    longDescription: "A comprehensive task management system for admins to add work, track pending/completed tasks, and monitor total quantity and amount in real time. Built with modern web technologies for efficiency and scalability.",
-    image: "/profile/profile6.jpg",
-    technologies: ["React", "JavaScript", "MySQL", "HTML", "CSS"],
-    liveUrl: "#",
+    title: "Mobile Shop Billing System",
+    description: "Web-based POS and management platform for mobile retailers",
+    longDescription: "The Mobile Shop Billing System is a web-based point-of-sale and shop management platform designed for small and medium mobile retailers. It provides a centralized dashboard to monitor daily and monthly sales, manage products, customers, invoices, and EMI plans efficiently.",
+    image: "/profile/profile14.jpg",
+    technologies: ["React", "Node.js", "MongoDB", "Express", "Vite"],
+    liveUrl: "https://mobileshop-billing.vercel.app/",
     githubUrl: "#",
     category: "Web App"
   },
@@ -38,12 +38,12 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    title: "Skill Connect",
-    description: "A platform connecting skilled workers with employers",
-    longDescription: "Skill Connect is a platform that connects professional and non-professional workers with business owners and recruiters. It enables workers to showcase their skills, find jobs, and allows employers to hire verified talent efficiently. Built with modern web technologies for reliability and ease of use.",
-    image: "/profile/profile5.jpg",
-    technologies: ["React", "Node.js", "PostgreSQL", "Vite"],
-    liveUrl: "#",
+    title: "LearnMate",
+    description: "AI-powered learning management platform for digital education",
+    longDescription: "LearnMate is an AI-powered learning management platform designed to enhance digital education through smart content delivery, fair assessments, and personalized learning support. It enables instructors to create structured courses and assessments, while students learn interactively with instant doubt-solving and progress tracking.",
+    image: "/profile/profile13.jpg",
+    technologies: ["React", "Node.js", "MongoDB", "AI Integration"],
+    liveUrl: "https://learnmatehq.vercel.app/",
     githubUrl: "#",
     category: "Web App"
   }
@@ -67,9 +67,12 @@ export const Projects = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <div
+            <a
               key={project.id}
-              className="group glass-card overflow-hidden interactive relative"
+              href={project.liveUrl !== "#" ? project.liveUrl : undefined}
+              target={project.liveUrl !== "#" ? "_blank" : undefined}
+              rel={project.liveUrl !== "#" ? "noopener noreferrer" : undefined}
+              className="group glass-card overflow-hidden interactive relative block cursor-pointer"
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
             >
@@ -120,7 +123,7 @@ export const Projects = () => {
                   )}
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
 

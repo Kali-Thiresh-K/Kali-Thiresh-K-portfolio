@@ -11,12 +11,12 @@ export const About = () => {
             About <span className="gradient-text">Me</span>
           </h2>
 
-          <div className="max-w-4xl mx-auto glass-card p-8 mb-12">
+          <div className="max-w-4xl mx-auto glass-card p-6 md:p-8 mb-12">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Hi! I'm <span className="text-primary font-semibold">Kali Thiresh K</span>, a Computer Science student at Kongu Engineering College with a strong passion for technology and innovation. I started with C, Java, and Python, and quickly grew into full-stack web development.
+              Hi! I'm <span className="text-primary font-semibold">Kali Thiresh K</span>, a Computer Science student at Kongu Engineering College with a strong passion for technology and innovation. I specialize in building full-stack web applications using the <span className="text-primary font-medium">MERN Stack</span> (MongoDB, Express, React, Node.js).
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mt-4">
-              Skilled in HTML, CSS, JavaScript, React, MySQL, and MongoDB, I love turning ideas into impactful projects. Some of my works include the <span className="text-primary font-medium">Craft Flow Control Center</span> and the <span className="text-primary font-medium">EV Charging Station Locator</span>.
+              I love turning ideas into impactful solutions. My recent work includes the <span className="text-primary font-medium">Mobile Shop Billing System</span>, an AI-powered learning platform called <span className="text-primary font-medium">LearnMate</span>, and an <span className="text-primary font-medium">EV Charging Station Locator</span>.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mt-4">
               Alongside coding, I’ve earned certifications in Oracle APEX, Blender, and Adobe Creative Suite. I believe in continuous learning and enjoy exploring new technologies to create real-world solutions.
@@ -25,11 +25,10 @@ export const About = () => {
         </div>
 
         {/* Stats section */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="mt-20 grid grid-cols-2 md:grid-cols-3 gap-6">
           {[
-            { number: "7.69", label: "Current CGPA" },
-            { number: "3+", label: "Certifications" },
-            { number: "10+", label: "Projects Built" },
+            { number: "7.67", label: "Current CGPA" },
+            { number: "5+", label: "Projects Built" },
             { number: "5+", label: "Technologies" },
           ].map((stat, index) => (
             <div key={index} className="glass-card text-center p-6 interactive">

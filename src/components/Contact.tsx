@@ -173,7 +173,7 @@ export const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="glass-card p-8">
+          <div className="glass-card p-6 md:p-8">
             <div className="flex items-center gap-3 mb-6">
               <MessageCircle className="w-6 h-6 text-primary" />
               <h3 className="text-2xl font-semibold">Send a Message</h3>

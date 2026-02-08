@@ -1,170 +1,167 @@
-import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Code, 
-  Palette, 
-  Database, 
-  Cloud, 
-  Smartphone, 
+import {
+  Code,
+  Palette,
+  Database,
+  Terminal,
+  Cpu,
   Globe,
   Zap,
-  Users
+  Layout,
+  Server,
+  Smartphone
 } from "lucide-react";
 
 interface Skill {
   name: string;
-  category: string;
 }
 
 interface SkillCategory {
   name: string;
-  icon: React.ComponentType<any>;
-  color: string;
+  icon: React.ElementType;
+  colorName: "primary" | "accent"; // Helper for logic
+  description: string;
   skills: Skill[];
 }
 
 const skillCategories: SkillCategory[] = [
   {
-    name: "Programming Languages",
+    name: "Languages",
     icon: Code,
-    color: "primary",
+    colorName: "primary",
+    description: "Core languages for logic and structure",
     skills: [
-      { name: "Java", category: "programming" },
-      { name: "Python", category: "programming" },
-      { name: "C", category: "programming" },
-      { name: "JavaScript", category: "programming" }
+      { name: "Java" },
+      { name: "Python" },
+      { name: "JavaScript" },
+      { name: "C" },
+      { name: "TypeScript" }
     ]
   },
   {
-    name: "Frontend Development",
-    icon: Palette,
-    color: "accent",
+    name: "Frontend",
+    icon: Layout,
+    colorName: "accent",
+    description: "Crafting beautiful user interfaces",
     skills: [
-      { name: "React", category: "frontend" },
-      { name: "HTML", category: "frontend" },
-      { name: "CSS", category: "frontend" },
-      { name: "JavaScript", category: "frontend" }
+      { name: "React" },
+      { name: "HTML5" },
+      { name: "CSS3" },
+      { name: "Tailwind CSS" },
+      { name: "Vite" }
     ]
   },
   {
-    name: "Database Management",
+    name: "Backend & DB",
     icon: Database,
-    color: "primary",
+    colorName: "primary",
+    description: "Robust server-side architecture",
     skills: [
-      { name: "MySQL", category: "database" },
-      { name: "MongoDB", category: "database" }
+      { name: "Node.js" },
+      { name: "Express" },
+      { name: "MySQL" },
+      { name: "MongoDB" },
+      { name: "Oracle APEX" }
     ]
   },
   {
-    name: "Tools & Technologies",
-    icon: Cloud,
-    color: "accent",
+    name: "Tools & DevOps",
+    icon: Terminal,
+    colorName: "accent",
+    description: "Workflow and deployment efficiency",
     skills: [
-      { name: "Git", category: "tools" },
-      { name: "GitHub", category: "tools" },
-      { name: "Blender", category: "tools" },
-      { name: "Adobe Suite", category: "tools" }
+      { name: "Git" },
+      { name: "GitHub" },
+      { name: "VS Code" },
+      { name: "Postman" }
+    ]
+  },
+  {
+    name: "Creative & Design",
+    icon: Palette,
+    colorName: "primary",
+    description: "Visual assets and prototyping",
+    skills: [
+      { name: "Blender" },
+      { name: "Adobe Photoshop" },
+      { name: "Adobe Illustrator" },
+      { name: "Figma" }
     ]
   }
 ];
 
-const tools = [
-  "React", "JavaScript", "Python", "Java", "C", "HTML", "CSS", "MySQL", 
-  "MongoDB", "Git", "GitHub", "Blender", "Adobe Illustrator", "Adobe Photoshop", 
-  "Oracle APEX", "Vite", "Tailwind CSS", "TypeScript"
-];
-
 export const Skills = () => {
-  const [activeCategory, setActiveCategory] = useState(0);
-
   return (
-    <section id="skills" className="py-20 relative">
+    <section id="skills" className="py-24 relative overflow-hidden">
+      {/* Background gradients for depth */}
+      <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -z-10 animate-pulse-glow" />
+      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl -z-10 animate-pulse-glow" />
+
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold mb-6">
-            Skills & <span className="gradient-text">Expertise</span>
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Technical <span className="gradient-text">Arsenal</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A comprehensive toolkit built through years of experience, 
-            continuous learning, and passion for crafting exceptional digital experiences.
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            A comprehensive stack of modern technologies I leverage to build
+            scalable, high-performance, and beautiful applications.
           </p>
         </div>
 
-        {/* Category navigation */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => {
-            const Icon = category.icon;
+            // Determine text color class based on the category color prop
+            const textColorClass = category.colorName === "primary" ? "text-primary" : "text-accent";
+            const bgGlowClass = category.colorName === "primary" ? "bg-primary/10" : "bg-accent/10";
+
             return (
-              <button
+              <div
                 key={index}
-                onClick={() => setActiveCategory(index)}
-                className={`glass-card p-4 flex items-center gap-3 interactive transition-all duration-300 ${
-                  activeCategory === index 
-                    ? 'bg-primary/20 border-primary/30 text-primary' 
-                    : 'hover:bg-glass/50'
-                }`}
+                className="group glass-card p-8 hover:border-primary/30 transition-all duration-500 hover:-translate-y-2"
               >
-                <Icon className="w-5 h-5" />
-                <span className="font-medium">{category.name}</span>
-              </button>
+                {/* Header with Icon */}
+                <div className="flex items-center gap-4 mb-6">
+                  <div className={`w-12 h-12 rounded-xl ${bgGlowClass} flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}>
+                    <category.icon className={`w-6 h-6 ${textColorClass}`} />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold">{category.name}</h3>
+                    <p className="text-xs text-muted-foreground">{category.description}</p>
+                  </div>
+                </div>
+
+                {/* Skills Tags */}
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill, idx) => (
+                    <Badge
+                      key={idx}
+                      variant="outline"
+                      className="border-glass-border bg-white/5 hover:bg-white/10 transition-colors py-1 px-3 text-sm font-normal"
+                    >
+                      {skill.name}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
             );
           })}
-        </div>
 
-        {/* Skills display */}
-        <div className="max-w-3xl mx-auto mb-16">
-          <div className="glass-card p-8">
-            <div className="flex items-center gap-3 mb-8">
-              {(() => {
-                const Icon = skillCategories[activeCategory].icon;
-                return <Icon className="w-6 h-6 text-primary" />;
-              })()}
-              <h3 className="text-2xl font-semibold">{skillCategories[activeCategory].name}</h3>
+          {/* Highlight Card for Soft Skills / Summary */}
+          <div className="glass-card p-8 flex flex-col justify-center items-center text-center border-accent/20 bg-gradient-to-br from-accent/5 to-transparent">
+            <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center mb-4 animate-bounce">
+              <Zap className="w-6 h-6 text-accent" />
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {skillCategories[activeCategory].skills.map((skill, index) => (
-                <div key={index} className="glass-card p-4 text-center">
-                  <span className="font-medium text-lg">{skill.name}</span>
-                </div>
-              ))}
+            <h3 className="text-xl font-bold mb-2">Always Learning</h3>
+            <p className="text-sm text-muted-foreground mb-4">
+              Constantly exploring new frameworks and tools to stay ahead of the curve.
+            </p>
+            <div className="flex gap-2 justify-center">
+              <Globe className="w-4 h-4 text-muted-foreground" />
+              <Server className="w-4 h-4 text-muted-foreground" />
+              <Cpu className="w-4 h-4 text-muted-foreground" />
+              <Smartphone className="w-4 h-4 text-muted-foreground" />
             </div>
           </div>
-        </div>
-
-        {/* Tools cloud */}
-        <div className="text-center">
-          <h3 className="text-2xl font-semibold mb-8">Technologies I Work With</h3>
-          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
-            {tools.map((tool, index) => (
-              <Badge
-                key={index}
-                variant="outline"
-                className="glass-card border-glass-border hover:bg-primary/10 hover:border-primary/30 hover:text-primary transition-all duration-300 text-sm py-2 px-4 interactive"
-                style={{
-                  animationDelay: `${index * 0.1}s`
-                }}
-              >
-                {tool}
-              </Badge>
-            ))}
-          </div>
-        </div>
-
-        {/* Achievement cards */}
-        <div className="grid md:grid-cols-4 gap-6 mt-16">
-          {[
-            { icon: Zap, title: "Performance", desc: "Optimized for speed" },
-            { icon: Smartphone, title: "Responsive", desc: "Mobile-first approach" },
-            { icon: Globe, title: "Accessible", desc: "WCAG compliant" },
-            { icon: Users, title: "Collaborative", desc: "Team player" }
-          ].map((item, index) => (
-            <div key={index} className="glass-card text-center p-6 interactive">
-              <item.icon className="w-8 h-8 text-primary mx-auto mb-3" />
-              <h4 className="font-semibold mb-2">{item.title}</h4>
-              <p className="text-sm text-muted-foreground">{item.desc}</p>
-            </div>
-          ))}
         </div>
       </div>
     </section>
