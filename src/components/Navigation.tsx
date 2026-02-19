@@ -77,7 +77,7 @@ export const Navigation = () => {
 
             {/* Resume Button (Desktop) */}
             <div className="hidden md:block">
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/profile/KALI-THIRESH-K%20resume%20final.pdf" target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" size="sm" className="glass border-glass-border">
                   <Eye className="w-4 h-4 mr-2" />
                   Resume
@@ -115,15 +115,15 @@ export const Navigation = () => {
               key={item.name}
               onClick={() => scrollToSection(item.href)}
               className={`text-2xl font-bold transition-colors hover:text-purple-400 ${activeSection === item.href.replace('#', '')
-                  ? 'text-purple-500'
-                  : 'text-foreground'
+                ? 'text-purple-500'
+                : 'text-foreground'
                 }`}
             >
               {item.name}
             </button>
           ))}
           {/* Resume button in mobile menu */}
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+          <a href="/profile/KALI-THIRESH-K%20resume%20final.pdf" target="_blank" rel="noopener noreferrer">
             <Button variant="outline" size="lg" className="glass border-glass-border mt-8 w-48">
               <Eye className="w-5 h-5 mr-2" />
               View Resume
