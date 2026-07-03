@@ -11,6 +11,8 @@ interface Project {
   liveUrl: string;
   githubUrl: string;
   category: string;
+  imageClass?: string;
+  imageStyle?: React.CSSProperties;
 }
 
 const projects: Project[] = [
@@ -45,6 +47,43 @@ const projects: Project[] = [
     technologies: ["React", "Node.js", "MongoDB", "AI Integration"],
     liveUrl: "https://learnmatehq.vercel.app/",
     githubUrl: "#",
+    category: "Web App"
+  },
+  {
+    id: 4,
+    title: "Health-O-Meter",
+    description: "AI-driven platform for monitoring diet, exercises, and overall health",
+    longDescription: "Health-O-Meter is an AI-driven platform for monitoring diet, exercises, and overall health performance. It provides intelligent insights, personalized exercise routines, and gamified features to motivate users to meet their health goals.",
+    image: "/profile/healthometer.png",
+    technologies: ["React.js", "Python", "MongoDB", "JavaScript", "REST API"],
+    liveUrl: "https://github.com/Kali-Thiresh-K/Health-O-meter",
+    githubUrl: "https://github.com/Kali-Thiresh-K/Health-O-meter",
+    category: "AI Web App",
+    imageClass: "object-cover object-left-top",
+    imageStyle: { objectPosition: "15px top" }
+  },
+  {
+    id: 5,
+    title: "Food Connect",
+    description: "Web-based platform utilizing geolocation to connect food donors and NGOs",
+    longDescription: "Food Connect is a web-based platform that minimizes food wastage by using geolocation to connect restaurants, hotels, wedding halls, and individual donors directly with local NGOs and community centers.",
+    image: "/profile/foodconnect.png",
+    technologies: ["React", "Node.js", "Express", "MongoDB", "Geolocation"],
+    liveUrl: "https://github.com/Kali-Thiresh-K/food-connect",
+    githubUrl: "https://github.com/Kali-Thiresh-K/food-connect",
+    category: "Web App",
+    imageClass: "object-cover object-left-top",
+    imageStyle: { objectPosition: "15px top" }
+  },
+  {
+    id: 6,
+    title: "Craft Flow Control Center",
+    description: "A real-time task management and monitoring system for admins",
+    longDescription: "Craft Flow Control Center is a real-time task management system that allows administrators to allocate work, track pending/completed tasks, and monitor total quantity and amount in real time.",
+    image: "/profile/profile6.jpg",
+    technologies: ["React", "Node.js", "Express", "MongoDB"],
+    liveUrl: "https://github.com/Kali-Thiresh-K/Product-Manufacturing-System/tree/main/craft-flow-control-center-main",
+    githubUrl: "https://github.com/Kali-Thiresh-K/Product-Manufacturing-System/tree/main/craft-flow-control-center-main",
     category: "Web App"
   }
 ];
@@ -81,7 +120,8 @@ export const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className={`w-full h-full ${project.imageClass || 'object-cover'} transition-transform duration-500 group-hover:scale-110`}
+                  style={project.imageStyle}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
 

@@ -11,15 +11,15 @@ export const About = () => {
             About <span className="gradient-text">Me</span>
           </h2>
 
-          <div className="max-w-4xl mx-auto glass-card p-6 md:p-8 mb-12">
+          <div className="max-w-4xl mx-auto glass-card p-6 md:p-8 mb-12 text-left">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Hi! I'm <span className="text-primary font-semibold">Kali Thiresh K</span>, a Computer Science student at Kongu Engineering College with a strong passion for technology and innovation. I specialize in building full-stack web applications using the <span className="text-primary font-medium">MERN Stack</span> (MongoDB, Express, React, Node.js).
+              Hello, I am <span className="text-primary font-semibold">Kali Thiresh K</span>, a Computer Science and Engineering student from <span className="text-primary font-medium">Kongu Engineering College</span>. My interest lies in developing software products which help solve real-world problems. Some of the tools which I like working on include <span className="text-primary font-medium">MERN Stack</span> full-stack web development, and building <span className="text-primary font-medium">AI products through Python</span>.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mt-4">
-              I love turning ideas into impactful solutions. My recent work includes the <span className="text-primary font-medium">Mobile Shop Billing System</span>, an AI-powered learning platform called <span className="text-primary font-medium">LearnMate</span>, and an <span className="text-primary font-medium">EV Charging Station Locator</span>.
+              Some of the software projects which I have developed are <span className="text-primary font-medium">Health-O-Meter</span> – AI-based health tracker application, <span className="text-primary font-medium">Food Connect</span> – Location based surplus food donation app, which reduces wastage of food, and <span className="text-primary font-medium">Mobile Shop Billing & Management System</span>.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mt-4">
-              Alongside coding, I’ve earned certifications in Oracle APEX, Blender, and Adobe Creative Suite. I believe in continuous learning and enjoy exploring new technologies to create real-world solutions.
+              I love experimenting with different technologies and am active in participating in various hackathons. I hope to make a difference in the world as a software engineer and developer.
             </p>
           </div>
         </div>
@@ -27,7 +27,7 @@ export const About = () => {
         {/* Stats section */}
         <div className="mt-20 grid grid-cols-2 md:grid-cols-3 gap-6">
           {[
-            { number: "7.67", label: "Current CGPA" },
+            { number: "7.80", label: "Current CGPA" },
             { number: "5+", label: "Projects Built" },
             { number: "5+", label: "Technologies" },
           ].map((stat, index) => (

@@ -77,7 +77,7 @@ export const Navigation = () => {
 
             {/* Resume Button (Desktop) */}
             <div className="hidden md:block">
-              <a href="/profile/KALI-THIRESH-K%20resume%20final.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/profile/Kali-Thiresh-Resume.pdf" target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" size="sm" className="glass border-glass-border">
                   <Eye className="w-4 h-4 mr-2" />
                   Resume
@@ -123,7 +123,7 @@ export const Navigation = () => {
             </button>
           ))}
           {/* Resume button in mobile menu */}
-          <a href="/profile/KALI-THIRESH-K%20resume%20final.pdf" target="_blank" rel="noopener noreferrer">
+          <a href="/profile/Kali-Thiresh-Resume.pdf" target="_blank" rel="noopener noreferrer">
             <Button variant="outline" size="lg" className="glass border-glass-border mt-8 w-48">
               <Eye className="w-5 h-5 mr-2" />
               View Resume

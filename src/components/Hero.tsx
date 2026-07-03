@@ -66,7 +66,7 @@ export const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex justify-center mb-12">
             {/* Only Download Resume in center */}
-            <a href="/profile/KALI-THIRESH-K%20resume%20final.pdf" download>
+            <a href="/profile/Kali-Thiresh-Resume.pdf" download="Kali-Thiresh-Resume.pdf">
               <Button
                 variant="outline"
                 size="lg"
