@@ -28,7 +28,7 @@ export const About = () => {
         <div className="mt-20 grid grid-cols-2 md:grid-cols-3 gap-6">
           {[
             { number: "7.80", label: "Current CGPA" },
-            { number: "5+", label: "Projects Built" },
+            { number: "7+", label: "Projects Built" },
             { number: "5+", label: "Technologies" },
           ].map((stat, index) => (
             <div key={index} className="glass-card text-center p-6 interactive">

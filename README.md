@@ -1,45 +1,95 @@
-# Kali Thiresh K Portfolio
+# Kali Thiresh K – Portfolio
 
-## Project info
+## 🚀 About
 
-This is a portfolio website for Kali Thiresh K, a Creative Developer and UI/UX Designer.
+This is my personal portfolio website showcasing my projects, technical skills, achievements, certifications, and experience as a Computer Science and Engineering student.
 
-## How can I edit this code?
+The portfolio highlights my work in Full-Stack Web Development and Artificial Intelligence, featuring projects such as:
 
-There are several ways of editing your application.
+- 🩺 Health-o-Meter – AI-powered health tracking platform
+- 🍽️ Food Connect – Location-based surplus food donation platform
+- 📱 Mobile Shop Billing & Management System – Billing, inventory, and sales management application
 
-**Use your preferred IDE**
+It also includes my technical skills, certifications, achievements, and contact information.
 
-You can clone this repo and push changes.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🛠️ Getting Started
 
-Follow these steps:
+### Prerequisites
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- Node.js
+- npm
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Installation
 
-# Step 3: Install the necessary dependencies.
-npm i
+Clone the repository:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+git clone <YOUR_GITHUB_REPOSITORY_URL>
+```
+
+Navigate to the project folder:
+
+```bash
+cd <PROJECT_FOLDER_NAME>
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
+
+```bash
 npm run dev
 ```
 
-## What technologies are used for this project?
+Open your browser and visit:
 
-This project is built with:
+```
+http://localhost:5173
+```
 
-- Vite
+---
+
+## 💻 Technologies Used
+
+- React.js
 - TypeScript
-- React
-- shadcn-ui
+- Vite
 - Tailwind CSS
+- shadcn/ui
 
-## Deployment
+---
 
-You can deploy this project to Vercel, Netlify, or any other static hosting provider.
+## ✨ Features
+
+- Responsive Design
+- Modern User Interface
+- About Me Section
+- Skills Showcase
+- Project Portfolio
+- Achievements & Certifications
+- Contact Information
+- Fast Performance
+
+---
+
+## 📬 Contact
+
+**Kali Thiresh K**
+
+📧 Email: kalithiresh811@gmail.com
+
+🔗 LinkedIn: https://linkedin.com/in/kalithiresh811
+
+💻 GitHub: https://github.com/Kali-Thiresh-K
+
+---
+
+## 📄 License
+
+This project is created for personal portfolio purposes.
