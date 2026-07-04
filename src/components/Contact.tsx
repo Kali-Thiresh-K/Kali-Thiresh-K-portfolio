@@ -37,10 +37,12 @@ export const Contact = () => {
       // You need to set up EmailJS account and get these IDs:
       // SERVICE_ID, TEMPLATE_ID, and PUBLIC_KEY from EmailJS dashboard
       await emailjs.send(
-        'service_9z5taeu', // Replace with your EmailJS service ID
-        'template_759aros', // Replace with your EmailJS template ID
+        import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_9z5taeu', // Replace with your EmailJS service ID
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_759aros', // Replace with your EmailJS template ID
         templateParams,
-        'u-aeIxDl1xxE0F5o8' // Replace with your EmailJS public key
+        {
+          publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'u-aeIxDl1xxE0F5o8', // Replace with your EmailJS public key
+        }
       );
 
       toast({
