@@ -43,17 +43,28 @@ export const Navigation = () => {
   const scrollToSection = (href: string) => {
     const element = document.getElementById(href.replace('#', ''));
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      // Reveal all .reveal wrappers up to and including the one containing
+      // the target so the browser calculates correct scroll positions
+      const revealElements = document.querySelectorAll('.reveal');
+      for (const revealEl of revealElements) {
+        revealEl.classList.add('revealed');
+        if (revealEl.contains(element)) break;
+      }
+
+      // Let the browser recalculate layout after reveals, then scroll
+      requestAnimationFrame(() => {
+        element.scrollIntoView({ behavior: 'smooth' });
+      });
     }
     setIsOpen(false);
   };
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'py-4' : 'py-6'
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'py-2' : 'py-4'
         }`}>
         <div className="container mx-auto px-6">
-          <div className={`glass-card flex items-center justify-between p-4 transition-all duration-300 ${scrolled ? 'backdrop-blur-md' : ''
+          <div className={`glass-card flex items-center justify-between p-3 transition-all duration-300 ${scrolled ? 'backdrop-blur-md' : ''
             }`}>
             {/* Logo */}
             <div className="text-xl font-bold gradient-text">

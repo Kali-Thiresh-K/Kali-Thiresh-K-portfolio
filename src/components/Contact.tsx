@@ -265,11 +265,15 @@ export const Contact = () => {
           <Button
             size="lg"
             className="rounded-full w-14 h-14 bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 animate-bounce"
-            onClick={() =>
-              document
-                .getElementById("contact")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
+            onClick={() => {
+              const element = document.getElementById("contact");
+              if (element) {
+                document.querySelectorAll('.reveal').forEach(el => el.classList.add('revealed'));
+                requestAnimationFrame(() => {
+                  element.scrollIntoView({ behavior: "smooth" });
+                });
+              }
+            }}
           >
             <MessageCircle className="w-6 h-6" />
           </Button>

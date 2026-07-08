@@ -143,6 +143,16 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* Offset scroll targets to clear the fixed navbar */
+  #hero,
+  #about,
+  #projects,
+  #achievements,
+  #skills,
+  #contact {
+    scroll-margin-top: 45px;
+  }
 }
 
 @layer components {

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Download, Github, Linkedin, Mail, Menu } from "lucide-react";
+import { ArrowDown, ArrowRight, Github, Linkedin, Mail, Menu } from "lucide-react";
 
 export const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,7 +10,14 @@ export const Hero = () => {
   }, []);
 
   const scrollToAbout = () => {
-    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+    const element = document.getElementById("about");
+    if (element) {
+      const revealEl = element.closest('.reveal');
+      if (revealEl) revealEl.classList.add('revealed');
+      requestAnimationFrame(() => {
+        element.scrollIntoView({ behavior: "smooth" });
+      });
+    }
   };
 
   return (
@@ -31,7 +38,7 @@ export const Hero = () => {
           <div className="relative flex justify-center mb-8">
             <div className="relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64">
               {/* Enhanced gradient glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-glow rounded-full blur-xl opacity-30 animate-pulse-glow" />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-glow rounded-full blur-xl opacity-15 animate-pulse-glow" />
 
               {/* Main profile image */}
               <img
@@ -41,7 +48,7 @@ export const Hero = () => {
               />
 
               {/* Waving Hand positioned on the profile */}
-              <div className="absolute -top-2 -right-2 w-12 h-12 bg-accent rounded-full flex items-center justify-center animate-bounce shadow-lg">
+              <div className="absolute -top-2 -right-2 w-12 h-12 bg-purple-500/90 rounded-full flex items-center justify-center animate-bounce shadow-lg">
                 <span className="text-lg">👋</span>
               </div>
             </div>
@@ -56,7 +63,7 @@ export const Hero = () => {
             <h2 className="text-2xl md:text-3xl text-muted-foreground font-light">
               Driven Computer Science Student
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg max-w-2xl mx-auto leading-relaxed" style={{ color: '#B8B5C3' }}>
               Passionate about learning and creating innovative solutions.
               Turning ideas into reality through code and continuous growth in
               technology.
@@ -65,17 +72,27 @@ export const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex justify-center mb-12">
-            {/* Only Download Resume in center */}
-            <a href="/profile/Kali-Thiresh-Resume.pdf" download="Kali-Thiresh-Resume.pdf">
-              <Button
-                variant="outline"
-                size="lg"
-                className="glass-card border-glass-border hover:bg-glass px-8 py-6 text-lg interactive"
-              >
-                <Download className="w-5 h-5 mr-2" />
-                Download Resume
-              </Button>
-            </a>
+            <Button
+              variant="outline"
+              size="lg"
+              className="glass-card border-glass-border px-8 py-6 text-lg interactive text-[#F5F3F7] hover:bg-purple-500/10 hover:border-purple-500/30 active:bg-purple-500/15 active:scale-[0.98] focus:bg-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500/50 focus-visible:ring-offset-0"
+              onClick={() => {
+                const element = document.getElementById("projects");
+                if (element) {
+                  const revealElements = document.querySelectorAll('.reveal');
+                  for (const revealEl of revealElements) {
+                    revealEl.classList.add('revealed');
+                    if (revealEl.contains(element)) break;
+                  }
+                  requestAnimationFrame(() => {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  });
+                }
+              }}
+            >
+              View My Projects
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
           </div>
 
           {/* Social Links */}
